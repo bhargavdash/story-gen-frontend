@@ -76,7 +76,7 @@ function UploadSection() {
       setAudioUrls({}); // Reset audio when generating a new story
 
       const response = await axios.post(
-        "https://story-from-images-610021435606.us-central1.run.app/generate_story",
+        "https://story-from-images-610021435606.us-central1.run.app/generate_story/",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -117,7 +117,7 @@ function UploadSection() {
       setLoading(true);
       setAudioUrls({}); // Reset audio when generating new one
 
-      const response = await axios.post("https://story-from-images-610021435606.us-central1.run.app/generate_audio", formData);
+      const response = await axios.post("https://story-from-images-610021435606.us-central1.run.app/generate_audio/", formData);
       console.log("Received audio from backend", response);
       setAudioUrls(response.data);
     } catch (error) {
